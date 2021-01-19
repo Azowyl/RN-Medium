@@ -23,11 +23,11 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import HelloWorld from './src/HelloWorld';
+import ArticleCollapsed from './src/Article/ArticleCollapsed/ArticleCollapsed';
 
 const App: () => React$Node = () => {
   return (
-    <HelloWorld title="Hello World from outside!"/>
+    <ArticleCollapsed />
   );
 };
 
