@@ -19,7 +19,7 @@ export default StyleSheet.create({
     color: 'grey',
   },
   articleImage: {
-    height: 50,
-    width: 50,
+    height: '100%',
+    width: '10%',
   }
 });

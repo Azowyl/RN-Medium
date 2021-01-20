@@ -27,7 +27,15 @@ import ArticleCollapsed from './src/Article/ArticleCollapsed/ArticleCollapsed';
 
 const App: () => React$Node = () => {
   return (
-    <ArticleCollapsed />
+    <ArticleCollapsed
+      article={{
+        title: "un title",
+        subtitle: "un subtitle",
+        readingTime: '4 min read',
+        author: 'some author',
+        image: 'https://picsum.photos/200/300',
+      }}
+    />
   );
 };
 

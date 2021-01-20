@@ -5,12 +5,12 @@ import ArticleCollapsedStyles from './styles';
 import ArticleBody from './ArticleBody';
 import ArticleImage from './ArticleImage';
 
-const ArticleCollapsed = () => {
+const ArticleCollapsed = (props) => {
   return (
     <View style={ArticleCollapsedStyles.container}>
       <Row>
-        <ArticleBody />
-        <ArticleImage />
+        <ArticleBody article={props.article} />
+        <ArticleImage article={props.article} />
       </Row>
     </View>
   );
