@@ -23,19 +23,11 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import ArticleCollapsed from './src/Article/ArticleCollapsed/ArticleCollapsed';
+import ArticleList from './src/Article/ArticleCollapsed/ArticleList';
 
 const App: () => React$Node = () => {
   return (
-    <ArticleCollapsed
-      article={{
-        title: "un title",
-        subtitle: "un subtitle",
-        readingTime: '4 min read',
-        author: 'some author',
-        image: 'https://picsum.photos/200/300',
-      }}
-    />
+    <ArticleList />
   );
 };
 
