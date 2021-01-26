@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 50,
+    marginVertical: 20,
     alignItems: 'center',
   },
   bodyContainer: {

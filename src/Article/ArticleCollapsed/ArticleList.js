@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import ArticleCollapsed from './ArticleCollapsed';
 
-const ArticleList = () => {
+const ArticleList = (props) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -15,11 +15,11 @@ const ArticleList = () => {
   }, []);
 
   return (
-    <View>
+    <ScrollView>
       {articles.map((article) => (
-        <ArticleCollapsed article={article} />
+        <ArticleCollapsed article={article} onPress={() => props.navigation.navigate('ArticleDetails', { article })}/>
       ))}
-    </View>
+    </ScrollView>
   );
 };
 
