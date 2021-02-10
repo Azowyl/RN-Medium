@@ -24,10 +24,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import HelloWorld from './src/HelloWorld';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App: () => React$Node = () => {
   return (
-    <HelloWorld />
+    <NavigationContainer><HelloWorld /></NavigationContainer>
   );
 };
 
