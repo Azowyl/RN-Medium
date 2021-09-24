@@ -9,6 +9,16 @@ class NewArticle extends React.Component {
     this.state = {}
   }
 
+  componentDidMount() {
+    this.setState({...this.props.route.params.article});
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.route.params !== this.props.route.params) {
+      this.setState({...this.props.route.params.article});
+    }
+  }
+
   onChange = (input, value) => {
     this.setState({ [input]: value });
   }
@@ -19,7 +29,7 @@ class NewArticle extends React.Component {
   }
 
   render() {
-    return <NewArticleForm onChange={this.onChange} onSubmit={this.onSubmit} />
+    return <NewArticleForm onChange={this.onChange} onSubmit={this.onSubmit} article={this.state} />
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, View } from 'react-native';
 import {Button, Icon, Input, Text} from 'react-native-elements';
 
-const NewArticleForm = ({ onChange, onSubmit }) => {
+const NewArticleForm = ({ onChange, onSubmit, article }) => {
   return (
     <ScrollView>
       <View style={{ flex: 1, flexDirection: 'row', padding: 35, backgroundColor: 'black', alignItems: 'center' }}>
@@ -15,18 +15,21 @@ const NewArticleForm = ({ onChange, onSubmit }) => {
           placeholder="How to..."
           leftIcon={{ type: 'font-awesome-5', name: 'heading', size: 15, color: 'grey' }}
           onChangeText={(value) => onChange('title', value)}
+          value={article.title}
         />
         <Input
           label="Author"
           placeholder="John Wick..."
           leftIcon={{ type: 'font-awesome-5', name: 'user', size: 15, color: 'grey' }}
           onChangeText={(value) => onChange('author', value)}
+          value={article.author}
         />
         <Input
           label="Read Time"
           placeholder="5 min"
           keyboardType="numeric"
-          onChangeText={(value) => onChange('readTime', value)}
+          onChangeText={(value) => onChange('readingTime', value)}
+          value={article.readingTime}
         />
         <Input
           label="Article"
@@ -34,6 +37,7 @@ const NewArticleForm = ({ onChange, onSubmit }) => {
           multiline={true}
           numberOfLines={15}
           onChangeText={(value) => onChange('body', value)}
+          value={article.body}
         />
         <Button title="Post!" buttonStyle={{ backgroundColor: 'green' }} onPress={onSubmit} />
       </View>

@@ -20,7 +20,11 @@ const ArticleList = (props) => {
   return (
     <ScrollView>
       {articles.map((article) => (
-        <ArticleCollapsed key={article.id} article={article} onPress={() => props.navigation.navigate('ArticleDetails', { article })}/>
+        <ArticleCollapsed
+          key={article.id}
+          article={article}
+          onPress={() => props.navigation.navigate('New', { article })}
+        />
       ))}
     </ScrollView>
   );
