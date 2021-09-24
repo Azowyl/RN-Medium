@@ -2,18 +2,13 @@ import React, {useEffect, useState} from 'react';
 import NewArticleForm from './NewArticleForm';
 import {connect, useDispatch} from 'react-redux';
 import {addNewArticle} from '../../Redux/actions/articles';
+import useFormFields from '../../Hooks/useFormFields';
 
 const NewArticleHooks = ({ route, navigation }) => {
-  const [article, setArticle] = useState({});
+  const defaultFields = {title: '', author: '', image: '', readingTime: '', body: ''};
+  const initialValues = route.params ? {...route.params.article} : defaultFields
+  const [article, handleChange] = useFormFields(initialValues);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    setArticle({ ...route.params ? route.params.article : {} });
-  }, [route.params]);
-
-  const onChange = (input, value) => {
-    setArticle({...article, [input]: value});
-  }
 
   const onSubmit = () => {
     dispatch(addNewArticle(article));
@@ -22,7 +17,7 @@ const NewArticleHooks = ({ route, navigation }) => {
 
   return (
     <NewArticleForm
-      onChange={onChange}
+      onChange={handleChange}
       onSubmit={onSubmit}
       article={article}
     />
