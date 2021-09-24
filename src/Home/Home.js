@@ -5,8 +5,8 @@ import ArticleDetails from '../Article/ArticleDetails/ArticleDetails';
 const Stack = createStackNavigator();
 
 const Home = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Home" component={ArticleList} />
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name="ArticleList" component={ArticleList} />
     <Stack.Screen name="ArticleDetails" component={ArticleDetails} />
   </Stack.Navigator>
 );

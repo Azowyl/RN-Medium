@@ -21,5 +21,10 @@ export default StyleSheet.create({
   articleImage: {
     height: 50,
     width: 50,
+  },
+  new_article_button: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
   }
 });
